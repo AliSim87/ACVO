@@ -2,55 +2,359 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
 }
+
+/* Typography
+-------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+    margin-bottom: 1.5em;
+    font-family: 'Lora', serif;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+
+.wrapper {
+    width: 100%;
+    max-width: 1440px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 10px;
+}
+
+.site-header {
+    background: rgba(2,6,20,.7);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+}
+
+    .logo img {
+        max-height: 50px;
+    }
+
+.navbarcontainer {
+    flex-grow: 2;
+    margin-left: 20px;
+}
+
+.navbar {
+    display: flex;
+    margin: auto;
+}
+
+    .navbar a {
+        text-decoration: none;
+        color: #fff;
+        padding: 0px 20px;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 21px;
+        text-transform: lowercase;
+    }
+
+        .navbar a:hover {
+            text-decoration: underline;
+            font-weight: 200;
+        }
+
+.socialmedia {
+}
+
+    .socialmedia ul {
+        list-style: none;
+        margin: 0px;
+    }
+
+        .socialmedia ul li {
+            margin: 0 5px;
+            position: relative;
+            display: inline-block;
+        }
+
+/*--------------------------------------------------------------
+## Homepage
+--------------------------------------------------------------*/
+.container {
+    margin: 0 auto;
+    max-width: 1250px;
+}
+
+.banner {
+    background-image: url("img/bannertest4.png");
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+}
+
+.banner-text-content {
+    width: 100%;
+    height: 100%;
+    display: table;
+    padding-top: 77px;
+}
+
+.banner-text-align {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.banner-text {
+    display: inline-block;
+    border: 12px solid rgba(255,255,255,.8);
+    background: rgba(3,9,31,0.5);
+    padding: 26px 30px;
+    text-align: center;
+}
+
+    .banner-text h2 {
+        color: white;
+        font-size: 40px;
+        font-family: lora;
+    }
+
+    .banner-text h3 {
+        color: white;
+        font-size: 50px;
+    }
+
+    .banner-text h2, h3 {
+        margin: 0px;
+    }
+
+.newsandevents {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.latestnews {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: 25px;
+}
+
+.newsheading {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+    .newsheading h3 {
+        text-transform: uppercase;
+        background-color: #fff;
+        display: inline-block;
+        position: relative;
+        padding: 0 16px 0 0;
+        color: #0aabcc;
+    }
+
+    .newsheading:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-top: 1px solid #0aabcc;
+        left: 0;
+        right: 0;
+    }
+
+    .newsheading:before {
+        top: calc(68% - .3rem - 2px);
+    }
+
+.latestnews-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.latestnews-posts .post-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.latestnews-posts .post-thumbnail {
+    display: inline-block;
+    min-width: 250px;
+    margin-right: 10px;
+}
+
+.latestnews-posts .content {
+    display: inline-block;
+}
+
+.latestnews-posts h2 {
+    margin: 0px;
+    font-size: 16px;
+}
+
+.latestnews-posts p {
+    font-size: 14px;
+}
+
+.latestnews-posts img {
+}
+
+.upcomingevents-posts .post-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.upcomingevents-posts h2 {
+    margin: 0px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.upcomingevents-posts p {
+    font-size: 14px;
+}
+
+.bulletinbar {
+    background-color: #d8f7fd;
+    margin-bottom: 20px;
+}
+
+.bulletinbarcontent {
+    padding: 20px 0px;
+    display: flex;
+}
+
+.bulletinbarcontentleft {
+    flex-grow: 2;
+    margin-right: 25px;
+}
+
+.bulletinbarcontentright {
+    flex-grow: 1;
+}
+
+    .bulletinbarcontentright img {
+        width: 300px;
+    }
+
+.servicesflex {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    justify-content: space-between;
+}
+
+.whatbox {
+    flex-grow: 1;
+    width: 0;
+    text-align: center;
+    background-color: #0aabcc;
+    margin: 10px;
+    color: #fff;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+#governance {
+    background-color: #70C1B3;
+}
+
+#funding {
+    background-color: #EF5B5B;
+}
+
+#finance {
+    background-color: #FFBA49;
+}
+
+#design {
+    background-color: #88AB75;
+}
+
+#volunteering {
+    background-color: #9C95DC;
+}
+
+.whatboxcontent {
+    padding: 15px;
+    padding-top: 25px;
+}
+
+    .whatboxcontent img {
+        width: 100%;
+        max-width: 100px;
+    }

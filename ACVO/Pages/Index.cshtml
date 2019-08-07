@@ -4,7 +4,125 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="banner-container">
+    <div class="banner">
+        <div class="banner-text-content">
+            <div class="banner-text-align">
+                <div class="banner-text">
+                    <section class="cd-intro">
+                        <h2 class="cd-headline letters rotate-3">
+                            <span>ACVO exists to</span></br>
+                            <span>represent, involve, develop and support</span></br>
+                            <span>Aberdeen's 3rd Sector</span>
+                        </h2>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="newsandevents">
+        <div class="latestnews">
+            <div class="newsheading">
+                <h3>
+                    Latest News
+                </h3>
+            </div>
+            <div class="latestnews-container">
+                <div class="latestnews-posts">
+                    <?php
+                    $query = new WP_Query('category_name=News&posts_per_page=3');
+                    if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+                    if (has_post_thumbnail()) {
+                    ?>
+                    <div class="post-container">
+                        <div class="post-thumbnail"><?php the_post_thumbnail(); ?></div>
+                        <?php
+                        }
+                        ?>
+                        <div class="post-content">
+                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                            <?php
+                            the_excerpt(); // or the_content(); for full post content
+                            ?>
+                        </div>
+                    </div>
+                    <?php endwhile;endif; ?>
+                </div>
+            </div>
+        </div>
+        <div class="upcomingevents">
+            <div class="newsheading">
+                <h3>
+                    Upcoming Events
+                </h3>
+            </div>
+            <div class="upcomingevents-container">
+                <div class="upcomingevents-posts">
+                    <?php
+                    $query = new WP_Query('category_name=Event&posts_per_page=2');
+                    if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+                    if (has_post_thumbnail()) {
+                    ?>
+                    <div class="post-container">
+                        <div class="post-thumbnail"><?php the_post_thumbnail( array(300,200)); ?></div>
+                        <?php
+                        }
+                        ?>
+                        <div class="post-content">
+                            <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                        </div>
+                    </div>
+                    <?php endwhile;endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="services">
+        <div class="newsheading">
+            <h3>
+                What We Do
+            </h3>
+        </div>
+        <ul class="servicesflex">
+            <li class="whatbox" id="governance">
+                <div class="whatboxcontent">
+                    <img src="<?php bloginfo('template_directory'); ?>\img\handshake.gif" />
+                    <h2>Governance</h2>
+                </div>
+            </li>
+            <li class="whatbox" id="funding">
+                <div class="whatboxcontent">
+                    <img src="<?php bloginfo('template_directory'); ?>\img\user.gif" />
+                    <h2>Funding and Business Planning</h2>
+                </div>
+            </li>
+            <li class="whatbox" id="finance">
+                <div class="whatboxcontent">
+                    <img src="<?php bloginfo('template_directory'); ?>\img\flipchart.gif" />
+                    <h2>Finance Services</h2>
+                </div>
+            </li>
+            <li class="whatbox" id="design">
+                <div class="whatboxcontent">
+                    <img src="<?php bloginfo('template_directory'); ?>\img\computer.gif" />
+                    <h2>Design</h2>
+                </div>
+            </li>
+            <li class="whatbox" id="volunteering">
+                <div class="whatboxcontent">
+                    <img src="<?php bloginfo('template_directory'); ?>\img\smile.gif" />
+                    <h2>Volunteering</h2>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="affiliates">
+</div>
+<div class="bulletin-signup">
 </div>
